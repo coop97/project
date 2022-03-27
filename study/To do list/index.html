@@ -126,7 +126,7 @@
               </li>
             </ul>
 
-            <div class="list-input show">
+            <div class="list-input">
               <label for="search-box">검색하기</label>
               <input type="text" name="title" id="title" placeholder="할 일을 입력 후, Enter를 누르세요">
             </div>
@@ -161,12 +161,29 @@
                 <button class="trash-btn"><img class="trash" src="img/trash.svg" alt="휴지통 아이콘"></button>
               </li>
             </ul>
+            <div class="list-input">
+              <label for="search-box">검색하기</label>
+              <input type="text" name="title" id="title" placeholder="할 일을 입력 후, Enter를 누르세요">
+            </div>
           </div>
-          <button class="pl-can plus"><img src="img/plus.svg" alt="플러스 버튼"></button>
+          <span class="plus"></span>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    // document.querySelector(".plus").addEventListener("click", function(){
+    //   document.querySelector(".plus").classList.toggle("cancel");
+    // });
+
+    document.querySelectorAll(".plus").forEach((el) => {
+      el.addEventListener("click", function(){
+        this.classList.toggle("cancel");
+        document.querySelector(".list-input").classList.toggle("show");
+      });
+    });
+  </script>
 </body>
 
 </html>
